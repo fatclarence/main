@@ -1,7 +1,5 @@
 package seedu.savenus.model.savings;
 
-import static java.util.Objects.requireNonNull;
-
 import seedu.savenus.model.util.Money;
 import seedu.savenus.model.util.TimeStamp;
 
@@ -17,37 +15,12 @@ public class Savings extends HistoryItem {
             + "For example: 1.50 or 200\n"
             + "Note that you also cannot save 0 or a negative amount of money!";
 
-    // Identity fields of a saving.
-    private final Money savingsAmount; // the amount to be saved.
-
     // Default starting savings amount.
     public Savings() {
-        super(new TimeStamp(TimeStamp.generateCurrentTimeStamp()));
-        savingsAmount = new Money("0.00");
+        super(new Money("0.00"), new TimeStamp(TimeStamp.generateCurrentTimeStamp()), true);
     }
 
     public Savings(String savings, String time) {
-        super(time);
-        requireNonNull(savings);
-        savingsAmount = new Money(savings);
+        super(savings, time, true);
     }
-
-    public String getTimeStampString() {
-        return timeStamp.toString();
-    }
-
-    public TimeStamp getTimeStamp() {
-        return timeStamp;
-    }
-
-    public Money getMoney() {
-        return this.savingsAmount;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%.02f", getMoney().getAmount());
-    }
-
-
 }
