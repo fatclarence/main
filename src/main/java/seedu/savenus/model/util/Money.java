@@ -23,7 +23,6 @@ public class Money implements Comparable<Money> {
      */
     public Money(String amountString) {
         requireNonNull(amountString);
-        System.out.println(amountString);
         checkArgument(isValidMoney(amountString), MESSAGE_CONSTRAINTS);
         if (!amountString.contains(".")) {
             amountString += ".00";

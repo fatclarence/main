@@ -12,6 +12,8 @@ import seedu.savenus.storage.savings.exceptions.InvalidSavingsAmountException;
 //@@author fatclarence
 /**
  * Saves an amount of money into the user's savings account.
+ *
+ * Adds the saving into the savings history of the user.
  */
 public class SaveCommand extends Command {
 
